@@ -1,5 +1,16 @@
 username = input("Enter your username: ")
 print(f"Welcome {username}")
 
-book_name = input("Enter book name: ")
-print(f"{username}'s books: {book_name}")
+books = []
+book_number = int(input("Enter number of books: "))
+for _ in range(book_number):
+    book = input("Enter book name: ")
+    books.append(book)
+
+print("------")
+print(f"{username}'s books: ")
+if books == []:
+    print("no books")
+else:
+    for i in books:
+        print(f" - {i}")
