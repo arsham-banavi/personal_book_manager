@@ -1,3 +1,5 @@
+from books import show_books
+
 username = input("Enter your username: ")
 print(f"Welcome {username}")
 
@@ -12,5 +14,4 @@ print(f"{username}'s books: ")
 if books == []:
     print("no books")
 else:
-    for i in books:
-        print(f" - {i}")
+    show_books(books)
