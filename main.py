@@ -19,7 +19,12 @@ if admin_mode == "yes":
 books = load_books()
 book_number = int(input("Enter number of books: "))
 for _ in range(book_number):
-    book = input("Enter book name: ")
+    book_name = input("Enter book name: ")
+    book_priority = input("Enter book priority (low / medium / high): ").lower()
+    book = {
+        "name": book_name,
+        "priority": book_priority
+    }
     books.append(book)
 
 print("------")
