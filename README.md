@@ -9,6 +9,13 @@ A simple personal book manager written in Python.
 - Save books
 - Read saved books
 - Admin Mode
+- Set book priority level
+
+## Book Priority
+Every book can have one of the priority leves below set onto it:
+- low
+- medium
+- high
 
 ## Requirements
 Running the program requires the following:
