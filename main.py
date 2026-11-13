@@ -33,5 +33,5 @@ if books == []:
     print("no books")
 else:
     show_books(books)
-
+print(f"goodbye {username}")
 save_books(books)
