@@ -1,37 +1,48 @@
+
 from books import show_books, save_books, load_books
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
-username = input("Enter your username: ")
-print(f"Welcome {username}")
+name = input("Hello, please enter your name: ")
 
-admin_mode = input("Enter admin mode? (yes/no): ")
+book_list = load_books()
+
+if book_list is None:
+    book_list = []
+
+print(f"\nWelcome {name} to the Personal Book Manager!")
+
+print(f"\nYou currently have {len(book_list)} books in your collection.")
+
+admin_mode = input("\nDo you want to enter admin mode (yes/no)? ").lower()
+
 if admin_mode == "yes":
-    admin_pass = input("Enter admin password: ")
-    if admin_pass == os.getenv("BOOK_MANAGER_ADMIN_PASSWORD"):
-        print("admin mode activated")
+    admin_password = input("Enter admin password: ")
+
+    if admin_password == os.getenv("admin_pass"):
+        print("Admin mode activated!")
     else:
-        print("wrong password")
+        print("Wrong password!")
 
+count = int(input("\nHow many books do you want to add? "))
 
-books = load_books()
-book_number = int(input("Enter number of books: "))
-for _ in range(book_number):
-    book_name = input("Enter book name: ")
-    book_priority = input("Enter book priority (low / medium / high): ").lower()
-    book = {
-        "name": book_name,
-        "priority": book_priority
-    }
-    books.append(book)
+for i in range(count):
+    book = input("\nEnter a book name: ")
 
-print("------")
-print(f"{username}'s books: ")
-if books == []:
-    print("no books")
-else:
-    show_books(books)
-print(f"goodbye {username}")
-save_books(books)
+    priority = input("Enter priority (low/medium/high): ").lower()
+
+    while priority not in ["low", "medium", "high"]:
+        print("Invalid priority!")
+        priority = input("Enter priority (low/medium/high): ").lower()
+
+    book_list.append({
+        "name": book,
+        "priority": priority
+    })
+
+print(f"\nYour collection now has {len(book_list)} books!")
+
+show_books(book_list)
+save_books(book_list)
