@@ -1,5 +1,5 @@
 
-from books import show_books, save_books, load_books
+from books import show_book, save_book, load_book
 from dotenv import load_dotenv
 import os
 
@@ -7,13 +7,14 @@ load_dotenv()
 
 name = input("Hello, please enter your name: ")
 
-book_list = load_books()
+book_list = load_book()
 
 if book_list is None:
     book_list = []
 
-print(f"\nWelcome {name} to the Personal Book Manager!")
-print("Personal Book Manager has started")
+
+print(f"\nHello {name}! Welcome to your personal library.")
+print("Let's manage your books!")
 
 print(f"\nYou currently have {len(book_list)} books in your collection.")
 
@@ -45,5 +46,5 @@ for i in range(count):
 
 print(f"\nYour collection now has {len(book_list)} books!")
 
-show_books(book_list)
-save_books(book_list)
+show_book(book_list)
+save_book(book_list)
