@@ -1,7 +1,7 @@
 # Personal Book Manager
 ![Static Badge](https://img.shields.io/badge/Python-3.12%2B-blue)
 
-A simple personal book manager written in Python. 
+A simple personal book manager written in Python, with the option to categorize books by priority.
 
 ## Features
 - Add multiple books
