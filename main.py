@@ -13,6 +13,7 @@ if book_list is None:
     book_list = []
 
 print(f"\nWelcome {name} to the Personal Book Manager!")
+print("Personal Book Manager has started")
 
 print(f"\nYou currently have {len(book_list)} books in your collection.")
 
