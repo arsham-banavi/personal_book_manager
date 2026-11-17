@@ -1,5 +1,5 @@
 
-from books import show_book, save_book, load_book
+from books import show_books, save_books, load_books
 from dotenv import load_dotenv
 import os
 
@@ -7,7 +7,7 @@ load_dotenv()
 
 name = input("Hello, please enter your name: ")
 
-book_list = load_book()
+book_list = load_books()
 
 if book_list is None:
     book_list = []
@@ -43,7 +43,9 @@ for i in range(count):
         "priority": priority
     })
 
+    print("Book added successfully!")
+
 print(f"\nYour collection now has {len(book_list)} books!")
 
-show_book(book_list)
-save_book(book_list)
+show_books(book_list)
+save_books(book_list)
