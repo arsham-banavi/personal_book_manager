@@ -23,7 +23,7 @@ if admin_mode == "yes":
     admin_password = input("Enter admin password: ")
 
     if admin_password == os.getenv("BOOK_MANAGER_ADMIN_PASSWORD"):
-        print("Admin mode activated! Welcome to admin mode")
+        print("Admin mode activated! Welcome to admin mode!")
     else:
         print("Wrong password!")
 
