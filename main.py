@@ -42,7 +42,7 @@ for i in range(count):
         "name": book,
         "priority": priority
     })
-print("Book added successfully!")
+print(f"Book added successfully! The books you just provided:{book}")
 print(f"\nYour collection now has {len(book_list)} books!")
 
 show_books(book_list)
