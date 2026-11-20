@@ -17,13 +17,13 @@ print("Let's manage your books!")
 
 print(f"\nYou currently have {len(book_list)} books in your collection.")
 
-admin_mode = input("\nDo you want to enter admin mode (yes/no)? ").lower()
+admin_mode = input("\nEnter admin mode(yes/no): ").lower()
 
 if admin_mode == "yes":
     admin_password = input("Enter admin password: ")
 
-    if admin_password == os.getenv("admin_pass"):
-        print("Admin mode activated!")
+    if admin_password == os.getenv("BOOK_MANAGER_ADMIN_PASSWORD"):
+        print("Admin mode activated! Welcome to admin mode!")
     else:
         print("Wrong password!")
 
